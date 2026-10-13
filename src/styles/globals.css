@@ -1,0 +1,236 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: var(--bg-cosmic);
+  height: 100vh;
+  height: 100dvh;
+  max-height: 100dvh;
+  color: var(--color-text-light);
+  overflow: hidden;
+  font-family: Nunito, Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+.app-container {
+  background: var(--bg-cosmic);
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  max-height: 100dvh;
+  font-family: Nunito, sans-serif;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-container::before {
+  content: "";
+  background: var(--bg-cosmic-overlay);
+  pointer-events: none;
+  z-index: 1;
+  position: absolute;
+  inset: 0;
+}
+
+main.app-main {
+  padding-top: var(--header-h);
+}
+
+.card-fit {
+  max-height: calc(100dvh - var(--header-h) - 16px);
+}
+
+.world-grid {
+  max-height: calc(100dvh - var(--header-h) - 260px);
+  overflow-y: auto;
+}
+
+.quiz-visual {
+  max-height: min(32dvh, 250px);
+}
+
+.drag-surface {
+  touch-action: none;
+}
+
+@media (max-width: 767px) {
+  .sim-tabs {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 8px;
+  }
+  .sim-tabs > * {
+    flex: 0 0 auto;
+  }
+}
+
+.text-main-heading {
+  font-family: "Fredoka One", Nunito, sans-serif;
+  font-size: var(--fs-main-heading);
+  color: var(--color-text-light);
+  margin: 0;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.text-section-heading {
+  font-family: "Fredoka One", Nunito, sans-serif;
+  font-size: var(--fs-section-heading);
+  color: var(--color-text-light);
+  margin: 0;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.text-learning-objective {
+  font-family: "Fredoka One", Nunito, sans-serif;
+  font-size: var(--fs-learning-objective);
+  color: var(--color-text-light);
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.text-question {
+  font-family: "Fredoka One", Nunito, sans-serif;
+  font-size: var(--fs-question-text);
+  color: var(--color-text-light);
+  font-weight: 900;
+  line-height: 1.4;
+}
+
+.text-number {
+  font-family: "Fredoka One", Nunito, sans-serif;
+  font-size: var(--fs-important-numbers);
+  color: var(--color-gold);
+  font-variant-numeric: tabular-nums;
+  font-weight: 900;
+}
+
+.text-body {
+  font-size: var(--fs-body-text);
+  color: var(--color-text-muted);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 24px;
+}
+
+.glass-card--strong {
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #facc15 0%, #eab308 100%);
+  color: #1e1035;
+  font-family: "Fredoka One", Nunito, sans-serif;
+  font-size: var(--fs-button-text);
+  font-weight: 900;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(250, 204, 21, 0.45);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 24px;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #fde047 0%, #facc15 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(250, 204, 21, 0.65);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-text-light);
+  font-family: Nunito, sans-serif;
+  font-size: var(--fs-button-text);
+  font-weight: 800;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.phase-band {
+  width: 90px;
+  height: 5px;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+}
+.phase-band--wonder { background: var(--color-wonder); box-shadow: 0 0 16px var(--color-wonder); }
+.phase-band--story { background: var(--color-story); box-shadow: 0 0 16px var(--color-story); }
+.phase-band--simulate { background: var(--color-simulate); box-shadow: 0 0 16px var(--color-simulate); }
+.phase-band--play { background: var(--color-play); box-shadow: 0 0 16px var(--color-play); }
+.phase-band--reflect { background: var(--color-reflect); box-shadow: 0 0 16px var(--color-reflect); }
+
+.fade-in-up {
+  animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar for inner scroll containers */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45);
+}

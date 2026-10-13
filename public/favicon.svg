@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <radialGradient id="fg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3b1c8c" />
+      <stop offset="100%" stop-color="#12072b" />
+    </radialGradient>
+  </defs>
+  <circle cx="50" cy="50" r="48" fill="url(#fg)" stroke="#facc15" stroke-width="4"/>
+  <!-- Circle circumference dashed guide -->
+  <circle cx="50" cy="50" r="32" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 3" opacity="0.6"/>
+  <!-- Sector arc highlight -->
+  <path d="M 50 50 L 82 50 A 32 32 0 0 0 50 18 Z" fill="#c084fc" fill-opacity="0.35" stroke="#fb923c" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Center point -->
+  <circle cx="50" cy="50" r="4" fill="#facc15"/>
+</svg>
